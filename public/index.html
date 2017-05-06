@@ -1,0 +1,78 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<!-- In LA!! -->
+	<head>
+		<title>To do list App</title>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	</head>
+	<body>
+
+	<div class="container" ng-controller="AppCtrl">
+		<h1>To do List App</h1>
+
+		<table class="table">
+		<thead>
+			<tr>
+				<th>title</th>
+				<th>text</th>
+				<th>due</th>
+				<th>status</th>
+				<th>Action</th>
+				<th>&nbsp;</th>
+			</tr>
+
+		</thead>
+		<tbody>
+			<tr ng-repeat="contact in contactlist">
+				<td>{{contact.title}}</td>
+				<td>{{contact.text}}</td>
+				<td>{{contact.due}}</td>
+				<td>{{contact.status}}</td>
+				<form action="/action_page.php">
+				<td><button class="btn btn-danger" ng-click="complete(contact._id)">Complete</button></td>
+				<td><button class="btn btn-danger" ng-click="Incomplete(contact._id)">InComplete</button></td> </form>
+				</form>
+			      
+			
+			
+			
+			<button onclick="myFunction()">Complete</button>
+
+	<p id="demo"></p>
+
+	
+				
+				<td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
+				<td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
+			</tr>
+			<tr>
+				<td><input class="form-control" ng-model="contact.title"></td>
+				<td><input class="form-control" ng-model="contact.text"></td>
+				<td><input class="form-control" ng-model="contact.due"></td>
+				<td><button class="btn btn-primary" ng-click="addContact()">Add task</button></td>
+				<td><button class="btn btn-info" ng-click="update()">Update</button></td>
+				<td><button class="btn btn-info" ng-click="deselect()">Clear</button></td> 
+			</tr> 
+			
+			
+			
+			
+			
+			
+			
+			
+		</tbody>
+		</table>
+	<div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src="controllers/controller.js"></script>
+	</body>
+
+
+</html>
